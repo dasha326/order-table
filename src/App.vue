@@ -1,56 +1,42 @@
 <template>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <label>
-        <input type="text" v-model="message">
-        <button @click="sendMessage()">Отправить</button>
-    </label>
+    <div class="container">
+        <h1><span class="connectionReady" >Connection ready!</span></h1>
+        <h2 v-if="connectionHasError">какая-то ошибка, перезагрузте страницу</h2>
+        <ListTables :list="tablesList" v-if="connectionIsReady"/>
+    </div>
 </template>
 
 <script>
-    import HelloWorld from './components/HelloWorld.vue'
-    import PieSocket from 'piesocket-js';
-
-    export default {
-        name: 'App',
-        components: {
-            HelloWorld
+import ListTables from "@/components/ListTables";
+import {mapState, mapMutations} from "vuex";
+import socketsbay from "@/tools/socketsbay";
+export default {
+    name: 'App',
+    data(){
+        return {}
+    },
+    components: {ListTables},
+    computed: {
+        ...mapState(['connectionReady', 'connectionError', 'tables']),
+        tablesList(){
+            return this.tables
         },
-        data() {
-            return {
-                channelPieSocket: null,
-                message: ''
-            }
+        connectionHasError(){
+            return this.connectionError
         },
-        methods: {
-            sendMessage() {
-                return this.channelPieSocket.publish("new_message", {
-                    message: this.message
-                })
-            }
-        },
-        mounted() {
-            const pieSocket = new PieSocket({
-                clusterId: "demo",
-                apiKey: "BidybaY8rstaLmPA54AHPhOkmKFFExpuOE9ol6qa",
-                notifySelf: true
-            });
-
-            pieSocket.subscribe("Channel-order-table").then((channel) => {
-                console.log("Channel is ready");
-                this.channelPieSocket = channel;
-            });
+        connectionIsReady(){
+            return this.connectionReady
         }
+    },
+    methods:{
+        ...mapState(['tables']),
+        ...mapMutations(['SET_TABLES']),
+       /* addMemberToTable(tables) {
+            this.websocket.send( JSON.stringify(tables) );
+        }*/
+    },
+    mounted() {
+        socketsbay.init();
     }
+}
 </script>
-
-<style>
-    #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
-</style>

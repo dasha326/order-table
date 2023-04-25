@@ -1,0 +1,46 @@
+//Font weight
+$weight-black: 900;
+$weight-extrabold: 800;
+$weight-bold: 700;
+$weight-semibold: 600;
+$weight-medium: 500;
+$weight-normal: 400;
+$weight-light: 300;
+$weight-extralight: 200;
+$weight-thin: 100;
+
+// Typography
+$headings-font-family: 'Roboto Condensed', Arial, sans-serif;
+$headings-font-weight: $weight-normal;
+$font-family-base: 'Roboto Condensed', Arial, sans-serif;
+$font-weight-base: $weight-light;
+$base-line-height: 1.5;
+$headings-line-height: 1.2;
+
+//Colors
+$primary-color: #ac4034;
+$secondary-color: #000;
+$light-font-color: #EDECE8;
+$grey-color: #899197;
+$grey-color-middle: #B6B0A4; //circle icons
+$grey-color-light: #C1C9CF;
+$body-color: #000;
+$body-bg: #ebeef0;
+
+//Media
+$media-xxl: 1366px;
+$media-xxl-max: $media-xxl - .02;
+$media-xl: 1200px;
+$media-xl-max: $media-xl - .02;
+$media-mxl: 1080px;
+$media-mxl-max: $media-mxl - .02;
+$media-lg: 992px;
+$media-lg-max: $media-lg - .02;
+$media-md: 768px;
+$media-md-max: $media-md - .02;
+$media-mlg: 840px;
+$media-mlg-max: $media-mlg - .02;
+$media-sm: 576px;
+$media-sm-max: $media-sm - .02;
+$media-xs: 414px;
+$media-xs-max: $media-xs - .02;

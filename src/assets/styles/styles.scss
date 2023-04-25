@@ -1,0 +1,64 @@
+@import "root";
+@import "variables";
+@mixin font-face ($ff, $path, $fs, $fw, $formats: woff2 woff) {
+  $src: null;
+  @each $format in $formats {
+    $src: append($src, url('fonts/' + quote($path) + "." + $format) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: $ff;
+    src: $src;
+    font-style: $fs;
+    font-weight: $fw;
+    font-display: swap;
+  }
+}
+@include font-face('Roboto Condensed', 'roboto-condensed-light', normal, 300);
+@include font-face('Roboto Condensed', 'roboto-condensed-regular', normal, 400);
+
+
+.container{
+  max-width: 767px;
+}
+.main{
+  height: calc(var(--vh, 1vh) * 100 - var(--headerHeight));
+  margin-top: var(--headerHeight);
+  > .container{
+    height: 100%;
+  }
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+  font-family: var(--bs-body-font-family);
+}
+body{
+  overflow: hidden;
+  height: calc(var(--vh, 1vh) * 100);
+}
+#app{
+  height: 100%;
+}
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+button{
+  color: currentColor;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
