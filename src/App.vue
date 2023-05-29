@@ -6,7 +6,7 @@
     </header>
     <main class="main">
         <TopSection/>
-        <ListTables :list="tablesList" v-if="connectionIsReady"/>
+        <ListTables v-if="connectionIsReady"/>
     </main>
     <footer>
         <div class="container">
@@ -16,33 +16,27 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import {mapState, mapMutations} from "vuex";
+import {computed, defineComponent} from 'vue';
+import {useStore} from "vuex";
 import ListTables from '@/components/ListTables.vue';
 import TopSection from "@/components/TopSection.vue";
+import socketsbayStart from "@/tools/socketsbay";
 
 export default defineComponent({
     name: 'App',
     components: {TopSection, ListTables},
-    computed: {
-        ...mapState(['connectionReady', 'connectionError', 'tables']),
-        tablesList(){
-            return this.tables
-        },
-        connectionHasError(){
-            return this.connectionError
-        },
-        connectionIsReady(){
-            return this.connectionReady
-        }
-    },
-    methods:{
-        ...mapState(['tables']),
-        ...mapMutations(['SET_TABLES']),
-      /* addMemberToTable(tables) {
-            websocket.send( JSON.stringify(tables) );
-        }*/
-    },
+    setup(){
+        const store = useStore();
+        console.log(store)
+        //const tables = useStore(['tables']);
+        const websocket = store.state.websocket
+        socketsbayStart(websocket, store)
+
+        const connectionIsReady = computed(()=> store.state.connectionReady);
+        const connectionHasError = computed(()=> store.state.connectionError);
+
+        return {connectionIsReady, connectionHasError, websocket}
+    }
 });
 </script>
 

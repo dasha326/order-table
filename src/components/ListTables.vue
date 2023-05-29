@@ -12,12 +12,17 @@
 
 <script>
 import CardTable from "@/components/CardTable";
+import {computed} from "vue";
+import {useStore} from "vuex";
 export default {
     name: "ListTables",
     components: {CardTable},
-    props: {
-        list: Array,
-    },
+    setup() {
+        const store = useStore();
+        console.log(store.state.tables.tablesList)
+        const list= computed(() => store.state.tables.tablesList)
+        return {list}
+    }
 }
 </script>
 

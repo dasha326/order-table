@@ -7,12 +7,22 @@
         <div class="card-body">
             <h5 class="card-title">Стол номер {{table.number}}</h5>
             <h6 class="card-subtitle mb-2 text-body-secondary">Стол расчитан на: {{table.places}}</h6>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Свободно мест: {{table.emptyPlaces}}</h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary" v-if="!table.private">Свободно мест: {{table.emptyPlaces}}</h6>
             <p class="card-text" v-if="table.comments">{{table.comments}}</p>
-            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-                <button type="button" class="btn btn-primary" v-if="canOrder" @click="orderTheTable()">Забронировать</button>
-                <button type="button" class="btn btn-primary" v-if="canJoin" @click="joinTheTable()">Присоединиться</button>
+            <div class="card-text mt-4" v-if="hasGames">
+                <h6>Игры на столе:</h6>
+                <div class="collapse show" id="table-games">
+                    <ul class="list-group mt-3">
+                        <li class="list-group-item list-group-item-light" v-for="item in table.games" :key="item">{{item}}</li>
+                    </ul>
+                </div>
             </div>
+            <div class="card-text mt-4" v-if="userNameVisible">Стол забронирован на {{userName}}</div>
+
+        </div>
+        <div class="card-footer" v-if="canOrder || canJoin">
+            <button type="button" class="btn btn-primary" v-if="canOrder" @click="orderTheTable()">Забронировать</button>
+            <button type="button" class="btn btn-primary" v-if="canJoin" @click="joinTheTable()">Присоединиться</button>
         </div>
     </div>
 </template>
@@ -36,19 +46,24 @@ export default {
     setup(props: ICardTable ){
         const store = useStore();
         const { table } = toRefs(props);
-        const canOrder = computed(() => table.value.available && (table.value.emptyPlaces === table.value.places));
-        const canJoin = computed(() => !table.value.private && table.value.available && (table.value.emptyPlaces < table.value.places));
-        const noEmptyPlaces = computed(() => table.value.emptyPlaces === 0);
-
         function joinTheTable(){
             store.commit('ADD_MEMBER_TO_TABLE', props.id);
         }
 
-        return {canOrder, canJoin, noEmptyPlaces, joinTheTable}
+        return {
+            canOrder: computed(() => table.value.available && (table.value.emptyPlaces === table.value.places)),
+            canJoin: computed(() => !table.value.private && table.value.available && (table.value.emptyPlaces < table.value.places)),
+            noEmptyPlaces: computed(() => table.value.emptyPlaces === 0),
+            hasGames: computed(() => table.value.games.length > 0),
+            userName: computed(() => table.value.user.name),
+            userNameVisible: computed(() => table.value.user.visibility),
+            joinTheTable}
     },
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+    .card{
+        height: 100%;
+    }
 </style>

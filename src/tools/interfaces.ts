@@ -9,5 +9,6 @@ export default interface  ITable {
         name: string,
         tel: string,
         visibility: boolean,
-    }
+    },
+    games: string[]
 }

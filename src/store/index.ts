@@ -1,39 +1,33 @@
 import { createStore } from 'vuex';
-import socketsbay from '../tools/socketsbay';
-import ITable from '../tools/interfaces';
+import tables from '@/store/tables'
+const SOCKETS_BAY_API_KEY = "31e07ba9c8c1d001ed341853dc188e41";
+
 interface IState {
   connectionReady: boolean,
   connectionError: boolean,
-  tables: null | Array<ITable>
+  websocket: WebSocket;
 }
 
 export default createStore({
   state: {
     connectionReady: false,
     connectionError: false,
-    tables: null,
+    websocket: new WebSocket(`wss://socketsbay.com/wss/v2/100/${SOCKETS_BAY_API_KEY}/`)
   } as IState,
   getters: {
   },
   mutations: {
     SET_CONNECTION(state: IState, payload:boolean){
-      state.connectionReady = payload
+      state.connectionReady = payload;
+      console.log(222)
     },
     SET_CONNECTION_ERROR(state: IState, payload:boolean){
       state.connectionReady = payload
     },
-    SET_TABLES(state: IState, payload: Array<ITable>){
-      state.tables = payload;
-    },
-    ADD_MEMBER_TO_TABLE(state: IState, id:number): void{
-      if (state.tables !== null){
-        const table = state.tables[id];
-        table.emptyPlaces --;
-        if (table.emptyPlaces === 0) table.available = false;
-        socketsbay.send(JSON.stringify(state.tables));
-      }
-    }
   },
   actions: {
+  },
+  modules: {
+    tables
   }
 })
