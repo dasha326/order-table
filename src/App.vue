@@ -1,21 +1,29 @@
 <template>
-    <div class="container">
-        <h1><span class="connectionReady" >Connection ready!</span></h1>
-        <h2 v-if="connectionHasError">какая-то ошибка, перезагрузте страницу</h2>
+    <header>
+        <div class="container">
+
+        </div>
+    </header>
+    <main class="main">
+        <TopSection/>
         <ListTables :list="tablesList" v-if="connectionIsReady"/>
-    </div>
+    </main>
+    <footer>
+        <div class="container">
+
+        </div>
+    </footer>
 </template>
 
-<script>
-import ListTables from "@/components/ListTables";
+<script lang="ts">
+import { defineComponent } from 'vue';
 import {mapState, mapMutations} from "vuex";
-import socketsbay from "@/tools/socketsbay";
-export default {
+import ListTables from '@/components/ListTables.vue';
+import TopSection from "@/components/TopSection.vue";
+
+export default defineComponent({
     name: 'App',
-    data(){
-        return {}
-    },
-    components: {ListTables},
+    components: {TopSection, ListTables},
     computed: {
         ...mapState(['connectionReady', 'connectionError', 'tables']),
         tablesList(){
@@ -31,12 +39,12 @@ export default {
     methods:{
         ...mapState(['tables']),
         ...mapMutations(['SET_TABLES']),
-       /* addMemberToTable(tables) {
-            this.websocket.send( JSON.stringify(tables) );
+      /* addMemberToTable(tables) {
+            websocket.send( JSON.stringify(tables) );
         }*/
     },
-    mounted() {
-        socketsbay.init();
-    }
-}
+});
 </script>
+
+<style lang="scss">
+</style>
