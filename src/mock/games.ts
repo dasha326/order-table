@@ -17,8 +17,8 @@ export default [
     },
     {
         "name": "Адель",
-        "available": true,
-        "orderCount": 1,
+        "available": false,
+        "orderCount": 0,
         "count": 1,
     },
     {
@@ -89,7 +89,7 @@ export default [
 
         "available": true,
         "orderCount": 1,
-        "count": 1,
+        "count": 2,
     },
     {
         "name": "Амул",

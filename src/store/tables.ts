@@ -1,10 +1,12 @@
-import ITable from '@/tools/interfaces';
+import {ITable, IJoinTable} from '@/tools/types';
 import store from "@/store/index";
-interface IState {
+import {Commit} from 'vuex'
+
+interface ITableList {
   tablesList: null | Array<ITable>
 }
 
-const state:IState = {
+const state:ITableList = {
     tablesList: null,
   }
 const getters = {
@@ -13,19 +15,36 @@ const getters = {
     // }
   };
 const mutations = {
-    SET_TABLES(state: IState, payload: Array<ITable>){
+    SET_TABLES(state: ITableList, payload: Array<ITable>){
       state.tablesList = payload;
     },
-    ADD_MEMBER_TO_TABLE(state: IState, id:number): void{
-      if (state.tablesList !== null){
-        const table = state.tablesList[id];
-        table.emptyPlaces --;
-        if (table.emptyPlaces === 0) table.available = false;
-        store.state.websocket.send(JSON.stringify(state.tablesList));
-      }
-    }
+    CHANGE_EMPTY_PLACES(state: ITableList, payload: IJoinTable['body']){
+        state.tablesList?.forEach(table => {
+            if(table.number === payload.tableId) {
+                table.emptyPlaces = payload.emptyPlaces;
+                if (payload.emptyPlaces === 0) table.available = false;
+            }
+        })
+    },
   };
 const actions = {
+    addMemberToTable({ state }: { state: ITableList }, id: number) {
+        if (state.tablesList !== null){
+            const table = state.tablesList[id];
+            table.emptyPlaces --;
+            if (table.emptyPlaces === 0) table.available = false;
+            store.state.websocket.send(JSON.stringify(
+                {
+                    action: 'joinToTable',
+                    body: {
+                        tableId: table.number,
+                        emptyPlaces: table.emptyPlaces,
+                        available: table.available
+                    }
+                } as IJoinTable
+            ));
+        }
+    }
   }
 export default {
   namespaced: true,

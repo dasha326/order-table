@@ -17,7 +17,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="card-text mt-4" v-if="userNameVisible">Стол забронирован на {{userName}}</div>
+            <div class="card-text mt-4" v-if="userNameVisible && !canOrder">Стол забронировал(ла) {{table.user.name}} на {{table.orderTime}} </div>
 
         </div>
         <div class="card-footer" v-if="canOrder || canJoin">
@@ -30,7 +30,7 @@
 <script lang="ts">
 import {toRefs, computed } from "vue";
 import {useStore} from "vuex";
-import ITable from '../tools/interfaces'
+import {ITable} from '@/tools/types'
 
 interface ICardTable {
     table: ITable,
@@ -39,15 +39,12 @@ interface ICardTable {
 
 export default {
     name: "CardTable",
-    props: {
-        table: Object,
-        id: Number
-    },
+    props: ['table', 'id'],
     setup(props: ICardTable ){
         const store = useStore();
         const { table } = toRefs(props);
         function joinTheTable(){
-            store.commit('ADD_MEMBER_TO_TABLE', props.id);
+            store.dispatch('tables/addMemberToTable', props.id);
         }
 
         return {
@@ -55,8 +52,7 @@ export default {
             canJoin: computed(() => !table.value.private && table.value.available && (table.value.emptyPlaces < table.value.places)),
             noEmptyPlaces: computed(() => table.value.emptyPlaces === 0),
             hasGames: computed(() => table.value.games.length > 0),
-            userName: computed(() => table.value.user.name),
-            userNameVisible: computed(() => table.value.user.visibility),
+            userNameVisible: computed(() => table.value.user.visibility && table.value.user.name !== null),
             joinTheTable}
     },
 }

@@ -1,18 +1,10 @@
 <template>
-    <header>
-        <div class="container">
-
-        </div>
-    </header>
+    <TheHeader/>
     <main class="main">
         <TopSection/>
         <ListTables v-if="connectionIsReady"/>
     </main>
-    <footer>
-        <div class="container">
-
-        </div>
-    </footer>
+    <TheFooter/>
 </template>
 
 <script lang="ts">
@@ -20,17 +12,17 @@ import {computed, defineComponent} from 'vue';
 import {useStore} from "vuex";
 import ListTables from '@/components/ListTables.vue';
 import TopSection from "@/components/TopSection.vue";
+import TheHeader from "@/components/layouts/TheHeader.vue";
 import socketsbayStart from "@/tools/socketsbay";
+import TheFooter from "@/components/layouts/TheFooter.vue";
 
 export default defineComponent({
     name: 'App',
-    components: {TopSection, ListTables},
+    components: {TheFooter, TheHeader, TopSection, ListTables},
     setup(){
         const store = useStore();
-        console.log(store)
-        //const tables = useStore(['tables']);
-        const websocket = store.state.websocket
-        socketsbayStart(websocket, store)
+        const websocket = store.state.websocket;
+        socketsbayStart(websocket, store);
 
         const connectionIsReady = computed(()=> store.state.connectionReady);
         const connectionHasError = computed(()=> store.state.connectionError);
