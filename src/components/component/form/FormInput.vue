@@ -13,10 +13,10 @@
                 @keyup="validRequiredInput()"
                 @blur="validateInput()"
             >
-            <span class="form-input-prefix"  v-if="hasPrefix">
+            <span class="form-input-prefix" v-if="$slots.prefix">
                 <slot name="prefix"></slot>
             </span>
-            <span class="form-input-postfix" v-if="hasPostfix || isInValid">
+            <span class="form-input-postfix"  v-if="$slots.postfix">
                 <slot name="postfix"></slot>
             </span>
         </span>
@@ -41,8 +41,6 @@ export default defineComponent({
             default: 'text'
         },
         placeholder: String,
-        hasPrefix: Boolean,
-        hasPostfix: Boolean,
         labelHidden: Boolean,
         isRequired: Boolean,
         valid: {
@@ -50,7 +48,8 @@ export default defineComponent({
             default: null
         }
     },
-    setup(props){
+    expose: ['validateInput'],
+    setup(props, {slots}){
         const inputValue = ref('');
         const errorText = ref('');
         const currentInput = ref<HTMLInputElement | null>(null);
@@ -69,8 +68,8 @@ export default defineComponent({
         };
         return{
             inputModClass: {
-                '--prefix': props.hasPrefix,
-                '--postfix': props.hasPostfix
+                '--prefix': slots.prefix,
+                '--postfix': slots.postfix
             },
             inputValue, errorText, currentInput,
             validateInput, validRequiredInput

@@ -21,16 +21,15 @@
 
         </div>
         <div class="card-footer" v-if="canOrder || canJoin">
-            <button type="button" class="btn btn-primary" v-if="canOrder" @click="orderTheTable()">Забронировать</button>
-            <button type="button" class="btn btn-primary" v-if="canJoin" @click="joinTheTable()">Присоединиться</button>
+            <button type="button" class="btn btn-primary" v-if="canOrder" @click="openPopup('order')">Забронировать</button>
+            <button type="button" class="btn btn-primary" v-if="canJoin" @click="openPopup('join')">Присоединиться</button>
         </div>
     </div>
 </template>
 
 <script lang="ts">
 import {toRefs, computed, defineComponent} from "vue";
-import {useStore} from "vuex";
-import {ITable} from '@/tools/types'
+import {ITable, CardPopupsType} from '@/tools/types'
 
 interface ICardTable {
     table: ITable,
@@ -40,21 +39,20 @@ interface ICardTable {
 export default defineComponent({
     name: "CardTable",
     props: ['table', 'id'],
-    setup(props: ICardTable ){
-        const store = useStore();
+    setup(props: ICardTable, {emit} ){
         const { table } = toRefs(props);
-        function joinTheTable(){
-            store.dispatch('tables/addMemberToTable', props.id);
+        function openPopup(action: CardPopupsType){
+            console.log(action)
+            emit('checkPopup', action)
         }
-
         return {
             canOrder: computed(() => table.value.available && (table.value.emptyPlaces === table.value.places)),
             canJoin: computed(() => !table.value.private && table.value.available && (table.value.emptyPlaces < table.value.places)),
             noEmptyPlaces: computed(() => table.value.emptyPlaces === 0),
             hasGames: computed(() => table.value.games.length > 0),
             userNameVisible: computed(() => table.value.user.visibility && table.value.user.name !== null),
-            joinTheTable
-        }
+            openPopup
+         }
     },
 })
 </script>
