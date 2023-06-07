@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import {toRefs, computed } from "vue";
+import {toRefs, computed, defineComponent} from "vue";
 import {useStore} from "vuex";
 import {ITable} from '@/tools/types'
 
@@ -37,7 +37,7 @@ interface ICardTable {
     id: number
 }
 
-export default {
+export default defineComponent({
     name: "CardTable",
     props: ['table', 'id'],
     setup(props: ICardTable ){
@@ -53,9 +53,10 @@ export default {
             noEmptyPlaces: computed(() => table.value.emptyPlaces === 0),
             hasGames: computed(() => table.value.games.length > 0),
             userNameVisible: computed(() => table.value.user.visibility && table.value.user.name !== null),
-            joinTheTable}
+            joinTheTable
+        }
     },
-}
+})
 </script>
 
 <style scoped lang="scss">

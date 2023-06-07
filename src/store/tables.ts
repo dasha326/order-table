@@ -1,6 +1,5 @@
 import {ITable, IJoinTable} from '@/tools/types';
 import store from "@/store/index";
-import {Commit} from 'vuex'
 
 interface ITableList {
   tablesList: null | Array<ITable>

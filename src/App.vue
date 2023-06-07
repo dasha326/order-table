@@ -1,6 +1,7 @@
 <template>
     <TheHeader/>
     <main class="main">
+        <ThePopup/>
         <TopSection/>
         <ListTables v-if="connectionIsReady"/>
     </main>
@@ -10,15 +11,16 @@
 <script lang="ts">
 import {computed, defineComponent} from 'vue';
 import {useStore} from "vuex";
+import socketsbayStart from "@/tools/socketsbay";
 import ListTables from '@/components/ListTables.vue';
 import TopSection from "@/components/TopSection.vue";
 import TheHeader from "@/components/layouts/TheHeader.vue";
-import socketsbayStart from "@/tools/socketsbay";
 import TheFooter from "@/components/layouts/TheFooter.vue";
+import ThePopup from "@/components/component/ThePopup.vue";
 
 export default defineComponent({
     name: 'App',
-    components: {TheFooter, TheHeader, TopSection, ListTables},
+    components: {ThePopup, TheFooter, TheHeader, TopSection, ListTables},
     setup(){
         const store = useStore();
         const websocket = store.state.websocket;

@@ -35,3 +35,5 @@ export interface IOrderTheTable {
     }
 }
 export type ISendEvents = IJoinTable | IOrderTheTable
+
+export type InputValidLabelsType = 'name' | 'tel' | 'email' | null;
