@@ -32,6 +32,7 @@ const actions = {
             const table = state.tablesList[id];
             table.emptyPlaces --;
             if (table.emptyPlaces === 0) table.available = false;
+
             store.state.websocket.send(JSON.stringify(
                 {
                     action: 'joinToTable',

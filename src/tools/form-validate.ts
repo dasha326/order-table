@@ -1,8 +1,5 @@
-//import {reactive} from "vue";
 import {InputValidLabelsType} from '@/tools/types'
-/*type ErrorType = {
 
-}*/
 
 function isEmail(fieldValue:string):boolean {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -15,16 +12,16 @@ function isPhone(fieldValue:string):boolean {
 
 export default function useFormValidation(value: string, isRequired: boolean, type: InputValidLabelsType): string{
     let errorText = '';
-        if (isRequired && value === ''){
-            errorText = "Это обязательное поле";
-        } else {
-            if((value !== '') && (type === 'email') && isEmail(value)){
-                errorText = "Необходимо ввести правильную почту";
-            }
-            if((value !== '') && (type === 'tel') && isPhone(value)){
-                errorText = "Необходимо ввести корректный номер телефона";
-            }
+    if (isRequired && value === ''){
+        errorText = "Это обязательное поле";
+    } else {
+        if((value !== '') && (type === 'email') && isEmail(value)){
+            errorText = "Необходимо ввести правильную почту";
         }
+        if((value !== '') && (type === 'tel') && isPhone(value)){
+            errorText = "Необходимо ввести корректный номер телефона";
+        }
+    }
 
     return errorText;
 }

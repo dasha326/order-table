@@ -59,12 +59,16 @@ export default defineComponent({
         }
 
         const validateInput = () => {
-            errorText.value = useFormValidation(inputValue.value, props.isRequired, props.valid);
-            if(errorText.value !== ''){
-                currentInput.value?.setCustomValidity("Invalid");
-            } else {
-                currentInput.value?.setCustomValidity('');
-            }
+            return new Promise((resolve) => {
+                errorText.value = useFormValidation(inputValue.value, props.isRequired, props.valid);
+                if(errorText.value !== ''){
+                    currentInput.value?.setCustomValidity("Invalid");
+                    resolve(false)
+                } else {
+                    currentInput.value?.setCustomValidity('');
+                    resolve(true);
+                }
+            })
         };
         return{
             inputModClass: {

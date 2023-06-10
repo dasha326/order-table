@@ -21,8 +21,8 @@
 
         </div>
         <div class="card-footer" v-if="canOrder || canJoin">
-            <button type="button" class="btn btn-primary" v-if="canOrder" @click="openPopup('order')">Забронировать</button>
-            <button type="button" class="btn btn-primary" v-if="canJoin" @click="openPopup('join')">Присоединиться</button>
+            <button type="button" class="btn btn-primary" v-if="canOrder" @click="openPopup('order', id)">Забронировать</button>
+            <button type="button" class="btn btn-primary" v-if="canJoin" @click="openPopup('join', id)">Присоединиться</button>
         </div>
     </div>
 </template>
@@ -41,9 +41,8 @@ export default defineComponent({
     props: ['table', 'id'],
     setup(props: ICardTable, {emit} ){
         const { table } = toRefs(props);
-        function openPopup(action: CardPopupsType){
-            console.log(action)
-            emit('checkPopup', action)
+        function openPopup(action: CardPopupsType, id:ICardTable['id']){
+            emit('checkPopup', action, id)
         }
         return {
             canOrder: computed(() => table.value.available && (table.value.emptyPlaces === table.value.places)),

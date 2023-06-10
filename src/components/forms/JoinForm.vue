@@ -1,7 +1,7 @@
 <template>
-    <form @submit.prevent="onSubmit">
+    <form @submit.prevent="onSubmit" ref="formRef">
         <form-input
-            ref="inputName"
+            ref="inputNameRef"
             label="Имя"
             labelHidden
             placeholder="Введите ваше имя"
@@ -14,7 +14,7 @@
             </template>
         </form-input>
         <form-input
-            ref="inputPhone"
+            ref="inputPhoneRef"
             label="Телефон"
             type="tel"
             isRequired
@@ -26,7 +26,10 @@
                 <svg-icon name="phone"/>
             </template>
         </form-input>
-        <button type="submit" class="btn btn-secondary mt-3">Присоединиться</button>
+        <button type="submit" class="btn btn-secondary mt-3">
+            <span>Присоединиться</span>
+            <svg-icon name="loading" v-if="isLoading"/>
+        </button>
     </form>
 </template>
 
@@ -34,25 +37,35 @@
 import {defineComponent, ref } from "vue";
 import FormInput from "@/components/component/form/FormInput.vue";
 import SvgIcon from "@/components/component/SvgIcon.vue";
-//import {useStore} from "vuex";
+import {useStore} from "vuex";
 
 export default defineComponent({
     name: "JoinForm",
+    props: {
+        tableId: Number
+    },
+    emit: ['popupClose'],
     components: {SvgIcon, FormInput},
-    setup() {
-        //const store = useStore();
-        const inputName = ref();
-        const inputPhone = ref();
+    setup(props, {emit}) {
+        const store = useStore();
+        const isLoading = ref(false)
+        const inputNameRef = ref();
+        const inputPhoneRef = ref();
+        const formRef = ref<HTMLFormElement | null>(null);
 
         function onSubmit() {
-            inputName.value.validateInput();
-            inputPhone.value.validateInput();
-
-
-            //store.dispatch('tables/addMemberToTable', props.id);
+            const isValidName = inputNameRef.value.validateInput();
+            const isValidPhone = inputPhoneRef.value.validateInput();
+            Promise.all([isValidName, isValidPhone]).then(([isValidName, isValidPhone]) => {
+                if(isValidName && isValidPhone){
+                   store.dispatch('tables/addMemberToTable', props.tableId);
+                   formRef.value?.reset();
+                   emit('popupClose', 'success');
+                }
+            })
         }
 
-        return {inputName, inputPhone, onSubmit}
+        return {inputNameRef, inputPhoneRef, formRef, isLoading, onSubmit}
     }
 })
 </script>

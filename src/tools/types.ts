@@ -39,3 +39,5 @@ export type ISendEvents = IJoinTable | IOrderTheTable
 export type InputValidLabelsType = 'name' | 'tel' | 'email' | null;
 
 export type CardPopupsType = 'join' | 'order';
+
+export type RequiredType = 'success' | 'error';

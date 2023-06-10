@@ -16,7 +16,7 @@ import ListTables from '@/components/ListTables.vue';
 import TopSection from "@/components/TopSection.vue";
 import TheHeader from "@/components/layouts/TheHeader.vue";
 import TheFooter from "@/components/layouts/TheFooter.vue";
-import ThePopup from "@/components/component/ThePopup.vue";
+import ThePopup from "@/components/component/popups/PopUp.vue";
 
 export default defineComponent({
     name: 'App',

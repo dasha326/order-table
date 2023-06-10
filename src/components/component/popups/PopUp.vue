@@ -19,19 +19,22 @@
 
 <script lang="ts">
 import {defineComponent, ref, onMounted } from "vue";
-import {Modal} from 'bootstrap';
+import {Modal} from "bootstrap";
 export default defineComponent({
-    name: "ThePopup",
+    name: "PopUp",
 
     props: {
-        title: String,
+        title: String
     },
     setup() {
         const popupRef = ref<HTMLElement | null>(null);
         let popup: Modal;
 
         function openPopup() {
-            popup.show()
+            popup.show();
+        }
+        function closePopup() {
+            popup.hide();
         }
 
         onMounted(() => {
@@ -39,7 +42,7 @@ export default defineComponent({
                 popup = new Modal(popupRef.value);
             }
         })
-        return {popupRef, openPopup}
+        return {popupRef, openPopup, closePopup}
 
     },
 })

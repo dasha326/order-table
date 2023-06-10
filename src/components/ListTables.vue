@@ -8,45 +8,30 @@
             </div>
         </div>
     </section>
-    <ThePopup ref="popupRef" :title="popupTitle">
-        <template #body>
-            <component :is="popupForm"/>
-        </template>
-    </ThePopup>
+    <TablePopup ref="tablePopupRef"/>
 </template>
 
 <script lang="ts">
 import {computed, defineComponent, ref} from "vue";
 import {useStore} from "vuex";
-import {CardPopupsType} from '@/tools/types';
+import {CardPopupsType} from "@/tools/types";
 import CardTable from "@/components/cards/CardTable.vue";
-import ThePopup from "@/components/component/ThePopup.vue";
-import JoinForm from "@/components/forms/JoinForm.vue"
-import OrderForm from "@/components/forms/OrderForm.vue"
+import TablePopup from "@/components/TablePopup.vue";
+
 export default defineComponent({
     name: "ListTables",
-    components: {ThePopup, CardTable, JoinForm, OrderForm},
+    components: {TablePopup, CardTable},
     setup() {
         const store = useStore();
         const list = computed(() => store.state.tables.tablesList);
-        const popupRef = ref();
-        const popupTitle = ref();
-        const popupForm = ref();
-        function popupHandler(action: CardPopupsType){
-           if(action === 'join'){
-               popupTitle.value = 'Заполните форму, что бы присоединиться';
-               popupForm.value = 'JoinForm'
-           }
-           if (action === 'order'){
-               popupTitle.value = 'Заполните форму, что бы забронировать стол';
-               popupForm.value = 'OrderForm'
-           }
-           popupRef.value.openPopup();
-        }
 
+        const tablePopupRef = ref();
+        const isTablePopup = ref(false);
+        function popupHandler(action: CardPopupsType, id: number) {
+            tablePopupRef.value?.popupHandler(action, id);
+        }
         return {
-            list,
-            popupRef, popupTitle, popupForm, popupHandler
+            list, tablePopupRef, isTablePopup, popupHandler
         }
     }
 })

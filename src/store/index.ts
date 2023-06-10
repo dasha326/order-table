@@ -8,6 +8,7 @@ interface IState {
   connectionReady: boolean,
   connectionError: boolean,
   websocket: WebSocket;
+  isPopupOpen: boolean
 }
 
 export default createStore({
@@ -15,17 +16,17 @@ export default createStore({
     isAuth: false,
     connectionReady: false,
     connectionError: false,
-    websocket: new WebSocket(`wss://socketsbay.com/wss/v2/100/${SOCKETS_BAY_API_KEY}/`)
+    websocket: new WebSocket(`wss://socketsbay.com/wss/v2/100/${SOCKETS_BAY_API_KEY}/`),
+    isPopupOpen: false
   } as IState,
   getters: {
   },
   mutations: {
     SET_CONNECTION(state: IState, payload:boolean){
       state.connectionReady = payload;
-      console.log(222)
     },
     SET_CONNECTION_ERROR(state: IState, payload:boolean){
-      state.connectionReady = payload
+      state.connectionReady = payload;
     },
   },
   actions: {
