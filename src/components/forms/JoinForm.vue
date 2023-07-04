@@ -56,8 +56,8 @@ export default defineComponent({
         function onSubmit() {
             const isValidName = inputNameRef.value.validateInput();
             const isValidPhone = inputPhoneRef.value.validateInput();
-            Promise.all([isValidName, isValidPhone]).then(([isValidName, isValidPhone]) => {
-                if(isValidName && isValidPhone){
+            Promise.all([isValidName, isValidPhone]).then((isValidInputs) => {
+                if(!isValidInputs.includes(false)){
                    store.dispatch('tables/addMemberToTable', props.tableId);
                    formRef.value?.reset();
                    emit('popupClose', 'success');

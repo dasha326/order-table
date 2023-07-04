@@ -2,19 +2,17 @@
     <label class="form-group">
         <span class="form-label" :class="{'visually-hidden': labelHidden }" >{{label}}</span>
         <span class="form-input-wrapper">
-            <input
+            <textarea
                 ref="currentInput"
                 class="form-input"
                 :class="inputModClass"
-                :type="type"
                 :placeholder="placeholder"
                 v-bind="$attrs"
-                :value="modelValue"
-                :required="isRequiredInvalid"
+                v-model="inputValue"
+                :required="isRequired"
                 @keyup="validRequiredInput()"
-                @blur="validateInput()"
-                @input="$emit('update:modelValue', $event.target.value)"
-            >
+                @blur="validateInput()" 
+            ></textarea>
             <span class="form-input-prefix" v-if="$slots.prefix">
                 <slot name="prefix"></slot>
             </span>
@@ -27,19 +25,15 @@
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, PropType, ref} from "vue";
+import {defineComponent, PropType, ref} from "vue";
 import useFormValidation from '@/tools/form-validate'
 import {InputValidLabelsType} from "@/tools/types";
 export default defineComponent({
-    name: "FormInput",
+    name: "FormTextarea",
     props: {
         label: {
             type: String,
             require: true
-        },
-        modelValue: {
-            type: String,
-            default: ''
         },
         type: {
             type: String,
@@ -55,21 +49,19 @@ export default defineComponent({
         }
     },
     expose: ['validateInput'],
-    emits: ['update:modelValue'],
     setup(props, {slots}){
-        const inputValue = computed(() => props.modelValue);
+        const inputValue = ref('');
         const errorText = ref('');
         const currentInput = ref<HTMLInputElement | null>(null);
-        const isRequiredInvalid = ref<boolean>(false);
+
         const validRequiredInput = () => {
-            if (props.isRequired)  validateInput();
+            if (props.isRequired) validateInput();
         }
 
         const validateInput = () => {
             return new Promise((resolve) => {
                 errorText.value = useFormValidation(inputValue.value, props.isRequired, props.valid);
                 if(errorText.value !== ''){
-                    isRequiredInvalid.value = true;
                     currentInput.value?.setCustomValidity("Invalid");
                     resolve(false)
                 } else {
@@ -83,7 +75,7 @@ export default defineComponent({
                 '--prefix': slots.prefix,
                 '--postfix': slots.postfix
             },
-            errorText, currentInput, isRequiredInvalid,
+            inputValue, errorText, currentInput,
             validateInput, validRequiredInput
         }
     }
@@ -107,6 +99,9 @@ export default defineComponent({
                 ~ *{
                     color: $danger;
                 }
+            }
+            &:required{
+                background-color: lightblue !important;
             }
             &.--prefix{
                 padding-left: $input-padding-x + 1.5;

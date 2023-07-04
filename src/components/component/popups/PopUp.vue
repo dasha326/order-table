@@ -1,6 +1,6 @@
 <template>
     <div class="modal" tabindex="-1" ref="popupRef">
-        <div class="modal-dialog">
+        <div class="modal-dialog" :class="bigModal?'modal-fullscreen':''">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{ title }}</h5>
@@ -24,7 +24,8 @@ export default defineComponent({
     name: "PopUp",
 
     props: {
-        title: String
+        title: String,
+        bigModal: Boolean
     },
     setup() {
         const popupRef = ref<HTMLElement | null>(null);

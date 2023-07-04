@@ -12,6 +12,10 @@ export default [
       "tel": "",
       "visibility": true
     },
+    "gameMaster": {
+      "required": false,
+      "comments": "",
+    },
     "games": []
   },
   {

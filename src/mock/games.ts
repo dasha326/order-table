@@ -1,34 +1,37 @@
 export default [
     {
-
+        "id": 0,
         "name": "Агентство Время + допы",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 1,
         "name": "Агрикола",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 2,
         "name": "Адель",
         "available": false,
         "orderCount": 0,
         "count": 1,
     },
     {
+        "id": 3,
         "name": "Адреналин",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 4,
         "name": "Азул",
 
         "available": true,
@@ -36,1091 +39,1095 @@ export default [
         "count": 1,
     },
     {
+        "id": 5,
         "name": "Азул Витражи Синтры",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
 
+        "id": 6,
         "name": "Азул Шоколатье",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 7,
         "name": "Азул: Летний дворец",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 8,
         "name": "Азул: Сад королевы",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 9,
         "name": "Азул: тайлы джокеров",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 10,
         "name": "Акватика",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 11,
         "name": "Алое Восстание",
-        "available": true,
-        "orderCount": 1,
-        "count": 1,
-    },
-    {
-
-        "name": "Алхимики + королевский голем",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 2,
     },
     {
+        "id": 11,
+        "name": "Алхимики + королевский голем",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 2,
+    },
+    {
+        "id": 12,
         "name": "Амул",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 12,
         "name": "Анахронность",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 13,
         "name": "Андор",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 14,
         "name": "Анх. Боги Египта + допы",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 15,
         "name": "Арборетум",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 16,
         "name": "Арктика",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 17,
         "name": "Архитекторы западного королевства",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 18,
         "name": "Архитекторы западного королевства: Доп. 'Эпоха Мастеров'",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 19,
         "name": "Атлантида",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 20,
         "name": "Барбария",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 21,
         "name": "Бестиарий Сигиллума + Новые Земли",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 22,
         "name": "Билет на поезд. детский",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 23,
         "name": "Билет на поезд: 1912",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 24,
         "name": "Билет на поезд: Европа",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 25,
         "name": "Битва Пяти Воинств",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 26,
         "name": "Битвы героев",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 27,
         "name": "Большая бродилка",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 28,
         "name": "Борьба за галактику + Перед бурей",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 29,
         "name": "Босс 'Монстр'",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 30,
         "name": "Бразилия",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 31,
         "name": "Брасс: Бирмингем",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 32,
         "name": "Брасс: Ланкашир",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 33,
         "name": "Братья по оружию + по вашему приказу",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 34,
         "name": "Букводжем",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 35,
         "name": "Бункер",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 36,
         "name": "Бункер 3.0",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 37,
         "name": "Бухта торговцев + допы",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 38,
         "name": "Бэнг дуэль",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 39,
         "name": "Бэнг! + допы",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 40,
         "name": "Бэнг. Dice game",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 41,
         "name": "В поисках Эльдорадо",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 42,
         "name": "Вал Адриана",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 43,
         "name": "Вальхалла",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 44,
         "name": "Вдали от солнца",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 45,
         "name": "Ведьмин Круг",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 46,
         "name": "Великая стена + допы",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 47,
         "name": "Великий западный путь + дорога на север",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 48,
         "name": "Вечная зима",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 49,
         "name": "Взаперти",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 50,
         "name": "Взрывной котенок",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 51,
         "name": "Взрывные котята",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 52,
         "name": "Виконты западного королевства",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 53,
         "name": "Виноделие + допы",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 54,
         "name": "Владыки эллады",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 55,
         "name": "Властелин колец: странствия в Средиземье",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 56,
         "name": "Властители",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 57,
         "name": "Внутри Лапенко",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 58,
         "name": "Во славу одина",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 59,
         "name": "Во сне и наяву",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 60,
         "name": "Вобла",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 61,
         "name": "Война Кольца + допы",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 62,
         "name": "Война миров",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 63,
         "name": "Войны Ктулху",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 64,
         "name": "Войны Ктулху. Дуэль",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 65,
         "name": "Войны магов",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 66,
         "name": "Войны Чёрной Розы + допы",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 67,
         "name": "Вороны Одина",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 68,
         "name": "Восходящее солнце",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 69,
         "name": "Время Фудзи",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 70,
         "name": "Всадники Скифии",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 71,
         "name": "Выше ниже",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 72,
         "name": "Гавр",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 73,
         "name": "Гайа",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 74,
         "name": "Ганеша",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 75,
         "name": "Ганзейский союз",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 76,
         "name": "Гача",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 77,
         "name": "Генотип",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 78,
         "name": "Героям здесь не место + допы",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 79,
         "name": "Глен Мор хроники",
         "available": false,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 80,
         "name": "Гномы вредители делюкс",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 81,
         "name": "Го",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 82,
         "name": "Голем",
         "available": false,
-        "orderCount": 1,
+        "orderCount": 0,
         "count": 1,
     },
     {
-
+        "id": 83,
         "name": "Голоса В Голове",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 84,
         "name": "Гонконг во тьме",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 85,
         "name": "Город Великой Машины + допы",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 86,
         "name": "Гравити Фолз: Спасти Пухлю",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 87,
         "name": "Гранд отель Австрия",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 88,
         "name": "Грандиозное представление",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 89,
         "name": "Грани Миров",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 90,
         "name": "Грани судьбы",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 91,
         "name": "Грани судьбы: восстание",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 92,
         "name": "Громовой камень",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 93,
         "name": "Гунны",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 94,
         "name": "Дальние рубежи",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 95,
         "name": "Дальше и Ближе + комплект металлических монет",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 96,
         "name": "Двор Чудес",
         "available": false,
-        "orderCount": 1,
+        "orderCount": 0,
         "count": 1,
     },
     {
+        "id": 97,
         "name": "Декодер",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 98,
         "name": "Детектив",
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
+        "id": 99,
         "name": "Детская мафия",
-
-        "available": true,
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
     },
     {
+        "id": 100,
         "name": "Джентельменская сделка",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 101,
+        "name": "Дикинги",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 102,
+        "name": "Диксит Одиссея",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 103,
+        "name": "Динозавры – любимцы богов",
+
         "available": true,
         "orderCount": 1,
         "count": 1,
     },
     {
-
-        "name": "Дикинги",
-
+        "id": 104,
+        "name": "Длина волны",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 105,
+        "name": "Добро пожаловать в 'ДиноМир'",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 106,
+        "name": "Долина торговцев",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 107,
+        "name": "Доминион",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count":  2,
+    },
+    {
+        "id": 108,
+        "name":  "Доминион: Интриги",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count":  1,
+    },
+    {
+        "id": 109,
+        "name": "Дорога приключений",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count":1,
+    },
+    {
+        "id": 110,
+        "name": "Дорога приключений: Архив Буресвета",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 111,
+        "name":  "Дорога приключений: Имя ветра",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 112,
+        "name": "Драконы и питомцы",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count":  1,
+    },
+    {
+        "id": 113,
+        "name": "Драфтозавры + допы",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 114,
+        "name": "Древний Ужас + допы",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 115,
+        "name": "Дюна Империя (+пластиковые компоненты)",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 116,
+        "name": "Дюна. Тайны Великих",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 117,
+        "name": "Домов",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 118,
+        "name": "Жадюги",
+        "available": false,
+        "orderCount": 0,
+        "count": 1,
+    },
+    {
+        "id": 119,
+        "name": "Жуткая Лавка",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 120,
+        "name": "За бортом + допы",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 121,
+        "name": "Забытые моря",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 122,
+        "name": "Закат империй",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 123,
+        "name": "Замес + допы",
+        "isOrdering": false,
+        "available":  true,
+        "orderCount": 1,
+        "count": 1,
+    },
+    {
+        "id": 124,
+        "name": "Замки Бургундии",
+        "isOrdering": false,
         "available": true,
         "orderCount": 1,
         "count": 1,
-    }
-    ,
+    },
     {
-        "name":
-            "Диксит Одиссея",
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-
-        "name":
-            "Динозавры – любимцы богов",
-
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Длина волны",
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-
-        "name":
-            "Добро пожаловать в 'ДиноМир'",
-
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Долина торговцев",
-        "available":
-            true,
+        "id": 125,
+        "name": "Замки и Катапульты + две башни и осада",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
         "count": 1,
-    }
-    ,
+    },
     {
-
-        "name":
-            "Доминион",
-        "available":
-            true,
+        "id": 126,
+        "name": "Запретная пустыня",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
-        "count":
-            2,
-    }
-    ,
+        "count": 1,
+    },
     {
-        "name":
-            "Доминион: Интриги",
-        "available":
-            true,
+        "id": 127,
+        "name": "Запретный город",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
+        "count": 1,
+    },
     {
-
-        "name":
-            "Дорога приключений",
-
-        "available":
-            true,
+        "id": 128,
+        "name": "Запретный остров",
+        "isOrdering": false,
+        "available": false,
+        "orderCount": 0,
+        "count": 1,
+    },
+    {
+        "id": 129,
+        "name": "Затерянные города",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
+        "count": 1,
+    },
     {
-        "name":
-            "Дорога приключений: Архив Буресвета",
-        "available":
-            true,
+        "id": 130,
+        "name": "Звёздные воины: Внешнее кольцо",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
+        "count": 1,
+    },
     {
-
-        "name":
-            "Дорога приключений: Имя ветра",
-
-        "available":
-            true,
+        "id": 131,
+        "name": "Звездные войны: Восстание",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
+        "count": 1,
+    },
     {
-        "name":
-            "Драконы и питомцы",
-        "available":
-            true,
+        "id": 132,
+        "name": "Звездные империи Deluxe х2",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
+        "count": 1,
+    },
     {
-
-        "name":
-            "Драфтозавры + допы",
-
-        "available":
-            true,
+        "id": 133,
+        "name": "Звездные империи Фронтир",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
+        "count": 1,
+    },
     {
-        "name":
-            "Древний Ужас + допы",
-        "available":
-            true,
+        "id": 134,
+        "name": "Зверь",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
+        "count": 1,
+    },
     {
-
-        "name":
-            "Дюна Империя (+пластиковые компоненты)",
-
-        "available":
-            true,
+        "id": 135,
+        "name": "Зельеварение: подарочное издание",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
+        "count": 1,
+    },
     {
-        "name":
-            "Дюна. Тайны Великих",
-        "available":
-            true,
+        "id": 136,
+        "name": "Зодчие",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
+        "count": 1,
+    },
     {
-        "name":
-            "Домов",
-        "available":
-            true,
+        "id": 137,
+        "name": "Зомби Кубики",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
+        "count":  1,
+    },
     {
-
-        "name":
-            "Жадюги",
-
-        "available":
-            false,
+        "id": 138,
+        "name": "Зомбицид вторая редакция",
+        "isOrdering": false,
+        "available":  true,
         "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
+        "count": 1,
+    },
     {
-        "name":
-            "Жуткая Лавка",
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-
-        "name":
-            "За бортом + допы",
-
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Забытые моря",
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Закат империй",
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-
-        "name":
-            "Замес + допы",
-
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Замки Бургундии",
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-
-        "name":
-            "Замки и Катапульты + две башни и осада",
-
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Запретная пустыня",
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-
-        "name":
-            "Запретный город",
-
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Запретный остров",
-        "available":
-            false,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-
-        "name":
-            "Затерянные города",
-
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Звёздные воины: Внешнее кольцо",
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-
-        "name":
-            "Звездные войны: Восстание",
-
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Звездные империи Deluxe х2",
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-
-        "name":
-            "Звездные империи Фронтир",
-
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Зверь",
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-
-        "name":
-            "Зельеварение: подарочное издание",
-
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Зодчие",
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-
-        "name":
-            "Зомби Кубики",
-
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Зомбицид вторая редакция",
-        "available":
-            true,
-        "orderCount": 1,
-        "count":
-            1,
-    }
-    ,
-    {
-        "name":
-            "Монополия",
-        "available":
-            false,
+        "id": 139,
+        "name": "Монополия",
+        "isOrdering": false,
+        "available":  false,
         "orderCount": 1,
         "count": 1
     }

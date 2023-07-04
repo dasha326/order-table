@@ -27,6 +27,11 @@ const mutations = {
     },
   };
 const actions = {
+    orderTable({ state }: { state: ITableList }, payload:{table:ITable,id:number}) {
+        if (state.tablesList !== null) {
+            state.tablesList[payload.id] = payload.table
+        }
+    },
     addMemberToTable({ state }: { state: ITableList }, id: number) {
         if (state.tablesList !== null){
             const table = state.tablesList[id];

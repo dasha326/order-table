@@ -1,5 +1,6 @@
 import { createStore } from 'vuex';
 import tables from '@/store/tables'
+import games from '@/store/games'
 import user from '@/store/user'
 const SOCKETS_BAY_API_KEY = "31e07ba9c8c1d001ed341853dc188e41";
 
@@ -33,6 +34,7 @@ export default createStore({
   },
   modules: {
     user,
-    tables
+    tables,
+    games
   }
 })

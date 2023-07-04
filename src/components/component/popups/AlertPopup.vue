@@ -1,7 +1,7 @@
 <template>
     <div class="modal modal-sm" tabindex="-1" ref="popupRef">
         <div class="modal-dialog">
-            <div class="modal-content" :class="alertType ? '--' + alertType : ''">
+            <div class="modal-content" :class="alertData?.alertType ? '--' + alertData?.alertType : ''">
                 <div class="modal-header">
                     <h6 class="modal-title">{{ alertTitle }}</h6>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -20,14 +20,15 @@
 <script lang="ts">
 import {defineComponent, ref, onMounted, computed, PropType} from "vue";
 import {Modal} from "bootstrap";
-import {RequiredType} from "@/tools/types";
+import {IRequiredAlertError, IRequiredAlertSuccess} from "@/tools/types";
 export default defineComponent({
     name: "AlertPopup",
     props: {
-        alertType: {
-            type: Object as PropType<RequiredType>
+        alertData :{
+            type: Object as PropType<IRequiredAlertSuccess|IRequiredAlertError>
         }
     },
+    expose: ['openPopup', 'closePopup'],
     setup(props) {
         const popupRef = ref<HTMLElement | null>(null);
         let popup: Modal;
@@ -48,20 +49,8 @@ export default defineComponent({
             }
         })
 
-        const alertTitle = computed(() => {
-            if(props.alertType === 'success'){
-                return 'Заявка успешно отправлена'
-            } else {
-                return 'Какая то проблема'
-            }
-        })
-        const alertText = computed(() => {
-            if(props.alertType === 'success'){
-                return 'Ожидайте звонка подтвреждения'
-            }  else {
-                return 'Попробуйте отпраивть еще раз или позвоните нам'
-            }
-        })
+        const alertTitle = computed(() => props.alertData?.title)
+        const alertText = computed(() => props.alertData?.text)
 
         return {
             alertTitle, alertText,

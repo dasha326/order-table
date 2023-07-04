@@ -6,12 +6,12 @@
                        @popupClose="closePopup"/>
         </template>
     </pop-up>
-    <AlertPopup ref="alertPopupRef" :alertType="alertPopupType"/>
+    <AlertPopup ref="alertPopupRef" :alertData="requireAlert"/>
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, PropType, ref, watch} from "vue";
-import {CardPopupsType,RequiredType} from '@/tools/types';
+import {defineComponent, ref } from "vue";
+import {CardPopupsType, IRequiredAlertError, IRequiredAlertSuccess, requiredAlertType,RequiredType} from '@/tools/types';
 import PopUp from "@/components/component/popups/PopUp.vue";
 import JoinForm from "@/components/forms/JoinForm.vue"
 import OrderForm from "@/components/forms/OrderForm.vue"
@@ -25,6 +25,7 @@ export default defineComponent({
         const popupTitle = ref();
         const popupForm = ref();
         const tableId = ref<number>();
+        const tablePlaces = ref();
         function popupHandler(action: CardPopupsType, id: number){
             tableId.value = id;
             if (action === 'join') {
@@ -38,21 +39,33 @@ export default defineComponent({
             popUpRef.value.openPopup();
         }
 
+        //Alert popup
         const alertPopupRef = ref();
-        const alertPopupType = ref();
+        const successAlert:IRequiredAlertSuccess = ({
+            alertType: 'success',
+            title: 'Заявка успешно отправлена',
+            text: 'Ожидайте звонка подтвреждения'
+        });
+        const errorAlert:IRequiredAlertError = ({
+            alertType: 'error',
+            title: 'Какая то проблема',
+            text: 'Попробуйте отправить еще раз или позвоните нам'
+        });
+
+        let requireAlert = ref<requiredAlertType>(null);
         function closePopup(action: RequiredType) {
             popUpRef.value.closePopup();
             if (action === 'success') {
-                alertPopupType.value = 'success'
-                alertPopupRef.value.openPopup();
+                requireAlert.value = successAlert;
             } else {
-                alertPopupType.value = 'error'
-                alertPopupRef.value.openPopup();
+                requireAlert.value = errorAlert;
             }
+            alertPopupRef.value.openPopup();
         }
 
         return {
-            popUpRef, alertPopupRef, popupTitle, tableId, popupForm, alertPopupType, popupHandler, closePopup
+            popUpRef, alertPopupRef, popupTitle, tableId, popupForm, requireAlert, tablePlaces,
+            popupHandler, closePopup
         }
     }
 })

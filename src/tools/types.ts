@@ -17,7 +17,14 @@ export interface ITable {
     }
     games: string[]
 }
-
+export interface IGame {
+    id: number,
+    name: string,
+    available: boolean,
+    isOrdering: boolean,
+    orderCount: number,
+    count: number,
+}
 export interface IJoinTable {
     action: 'joinToTable',
     body: {
@@ -34,10 +41,29 @@ export interface IOrderTheTable {
         available: boolean
     }
 }
-export type ISendEvents = IJoinTable | IOrderTheTable
+export interface IValidateGames {
+    action: 'validateGames',
+    body: Record<number, string>
+}
+export type ISendEvents = IJoinTable | IOrderTheTable | IValidateGames
 
 export type InputValidLabelsType = 'name' | 'tel' | 'email' | null;
 
 export type CardPopupsType = 'join' | 'order';
 
+/*Alert Types*/
 export type RequiredType = 'success' | 'error';
+export interface IRequiredAlertSuccess {
+    alertType: 'success',
+    title: string,
+    text: string
+}
+export interface IRequiredAlertError {
+    alertType: 'error',
+    title: string,
+    text: string
+}
+export type requiredAlertType = IRequiredAlertSuccess|IRequiredAlertError|null
+
+
+export type CheckGamesType = Record<number, string>

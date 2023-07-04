@@ -24,7 +24,6 @@ export default defineComponent({
     setup() {
         const store = useStore();
         const list = computed(() => store.state.tables.tablesList);
-
         const tablePopupRef = ref();
         const isTablePopup = ref(false);
         function popupHandler(action: CardPopupsType, id: number) {
