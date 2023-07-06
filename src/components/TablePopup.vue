@@ -51,14 +51,22 @@ export default defineComponent({
             title: 'Какая то проблема',
             text: 'Попробуйте отправить еще раз или позвоните нам'
         });
+        const isOrderAlert:IRequiredAlertError = ({
+            alertType: 'error',
+            title: 'Стол забронирован',
+            text: 'Извините стол забронирован. Попробуйте забронировать другой'
+        });
 
         let requireAlert = ref<requiredAlertType>(null);
         function closePopup(action: RequiredType) {
             popUpRef.value.closePopup();
-            if (action === 'success') {
-                requireAlert.value = successAlert;
-            } else {
-                requireAlert.value = errorAlert;
+            switch (action) {
+                case "success": requireAlert.value = successAlert;
+                break;
+                case "isOrder": requireAlert.value = isOrderAlert;
+                break;
+                case "error": requireAlert.value = errorAlert;
+                break;
             }
             alertPopupRef.value.openPopup();
         }

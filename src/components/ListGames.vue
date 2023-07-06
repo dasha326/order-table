@@ -66,9 +66,9 @@ export default defineComponent({
                         unCheckedItem(0);
                     } //Todo: Доделать отжатие чекбокса
                     resolve(checkedGames.value);
-                }, 3000)
+                }, 2000)
             }).then(
-                (result) => {``
+                (result) => {
                     //store.commit('games/SET_AVAILABLE', result)``
                     store.state.websocket.send(JSON.stringify(
                         {

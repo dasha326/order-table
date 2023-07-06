@@ -151,9 +151,18 @@ export default defineComponent({
             const isValidTime = inputTimeRef.value.validateInput();
             Promise.all([isValidName, isValidPhone, isValidPeople, isValidTime]).then((isValidInputs) => {
                 if(!isValidInputs.includes(false)){
-                    store.dispatch('tables/orderTable', {table, id: props.tableId});
-                    formRef.value?.reset();
-                    emit('popupClose', 'success');
+                    store.dispatch('tables/orderTable', {table, id: props.tableId}).then(result => {
+                        //formRef.value?.reset();
+                        switch (result) {
+                            case "success": emit('popupClose', 'success');
+                                break;
+                            case "isOrder": emit('popupClose', 'isOrder');
+                                break;
+                            case "error": emit('popupClose', 'error');
+                                break;
+                        }
+                    });
+
                 }
             })
             //store.dispatch('tables/addMemberToTable', props.id);

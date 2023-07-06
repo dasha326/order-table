@@ -35,11 +35,7 @@ export interface IJoinTable {
 }
 export interface IOrderTheTable {
     action: 'orderTheTable',
-    body: {
-        tableId: number,
-        emptyPlaces: number,
-        available: boolean
-    }
+    body: ITable
 }
 export interface IValidateGames {
     action: 'validateGames',
@@ -52,7 +48,7 @@ export type InputValidLabelsType = 'name' | 'tel' | 'email' | null;
 export type CardPopupsType = 'join' | 'order';
 
 /*Alert Types*/
-export type RequiredType = 'success' | 'error';
+export type RequiredType = 'success' | 'isOrder' | 'error';
 export interface IRequiredAlertSuccess {
     alertType: 'success',
     title: string,
