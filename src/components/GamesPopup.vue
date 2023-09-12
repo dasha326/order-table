@@ -12,8 +12,8 @@
 <script lang="ts">
 import {defineComponent, ref} from "vue";
 import {IRequiredAlertError, requiredAlertType} from "@/tools/types";
-import PopUp from "@/components/component/popups/PopUp.vue";
-import AlertPopup from "@/components/component/popups/AlertPopup.vue";
+import PopUp from "@/components/module/popups/PopUp.vue";
+import AlertPopup from "@/components/module/popups/AlertPopup.vue";
 import ListGames from "@/components/ListGames.vue";
 
 export default defineComponent({

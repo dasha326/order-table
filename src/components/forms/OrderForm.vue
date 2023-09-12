@@ -90,10 +90,10 @@
 import {defineComponent, PropType, ref, reactive, computed, watch} from "vue";
 import {useStore} from "vuex";
 import {ITable} from '@/tools/types'
-import FormInput from "@/components/component/form/FormInput.vue";
-import FormCheckbox from "@/components/component/form/FormCheckbox.vue";
-import SvgIcon from "@/components/component/SvgIcon.vue";
-import FormTextarea from "@/components/component/form/FormTextarea.vue";
+import FormInput from "@/components/module/form/FormInput.vue";
+import FormCheckbox from "@/components/module/form/FormCheckbox.vue";
+import SvgIcon from "@/components/module/SvgIcon.vue";
+import FormTextarea from "@/components/module/form/FormTextarea.vue";
 import GamesPopup from "@/components/GamesPopup.vue";
 
 export default defineComponent({

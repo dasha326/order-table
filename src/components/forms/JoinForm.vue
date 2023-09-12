@@ -35,8 +35,8 @@
 
 <script lang="ts">
 import {defineComponent, ref } from "vue";
-import FormInput from "@/components/component/form/FormInput.vue";
-import SvgIcon from "@/components/component/SvgIcon.vue";
+import FormInput from "@/components/module/form/FormInput.vue";
+import SvgIcon from "@/components/module/SvgIcon.vue";
 import {useStore} from "vuex";
 
 export default defineComponent({

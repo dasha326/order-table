@@ -33,7 +33,7 @@
 import {defineComponent,computed, ref} from "vue";
 import {useStore} from "vuex";
 import {IValidateGames, CheckGamesType} from '@/tools/types';
-import FormCheckbox from "@/components/component/form/FormCheckbox.vue";
+import FormCheckbox from "@/components/module/form/FormCheckbox.vue";
 
 export default defineComponent({
     name: "ListTables",

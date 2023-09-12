@@ -12,10 +12,10 @@
 <script lang="ts">
 import {defineComponent, ref } from "vue";
 import {CardPopupsType, IRequiredAlertError, IRequiredAlertSuccess, requiredAlertType,RequiredType} from '@/tools/types';
-import PopUp from "@/components/component/popups/PopUp.vue";
+import PopUp from "@/components/module/popups/PopUp.vue";
 import JoinForm from "@/components/forms/JoinForm.vue"
 import OrderForm from "@/components/forms/OrderForm.vue"
-import AlertPopup from "@/components/component/popups/AlertPopup.vue";
+import AlertPopup from "@/components/module/popups/AlertPopup.vue";
 
 export default defineComponent({
     name: "TablePopup",

@@ -1,6 +1,5 @@
-import {ITable, IJoinTable, IOrderTheTable, IValidateGames, RequiredType} from '@/tools/types';
+import {ITable, IJoinTable, IOrderTheTable, RequiredType} from '@/tools/types';
 import store from "@/store/index";
-import {reactive} from "vue";
 
 interface ITableList {
   tablesList: null | Array<ITable>
@@ -10,9 +9,6 @@ const state:ITableList = {
     tablesList: null,
   }
 const getters = {
-    // userName(state: IState){
-    //   if (state.tablesList !== null) return state.tablesList[id].user.name
-    // }
   };
 const mutations = {
     SET_TABLES(state: ITableList, payload: Array<ITable>){
